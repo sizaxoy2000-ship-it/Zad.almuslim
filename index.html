@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>زاد المسلم - Zad Al-Muslim</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Lateef&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #010d0c; --gold-primary: #d4af37; --gold-accent: #f7e7ce; }
+        body { background-color: var(--bg-color); font-family: 'Amiri', serif; color: var(--gold-primary); margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
+        .header-section { text-align: center; margin-bottom: 25px; }
+        .app-title { font-size: 2.5em; margin: 0; }
+        .sub-title { color: var(--gold-accent); font-family: 'Lateef'; font-size: 1.2em; }
+        .main-container { width: 100%; max-width: 480px; display: flex; flex-direction: column; gap: 15px; }
+        .top-info-box { border: 2px solid var(--gold-primary); padding: 12px; border-radius: 8px; text-align: center; color: var(--gold-primary); font-weight: bold; margin-bottom: 10px; }
+        .azan-circle { border: 2px solid var(--gold-primary); padding: 10px 45px; border-radius: 50px; width: fit-content; margin: 0 auto 20px auto; color: var(--gold-primary); font-weight: bold; }
+        .gold-button { background: linear-gradient(145deg, #d4af37, #a68628); color: #03201f; border: 2px solid #b8902e; padding: 15px 25px; border-radius: 50px; font-size: 1.2em; font-weight: bold; cursor: pointer; text-align: right; display: flex; justify-content: space-between; align-items: center; direction: ltr; box-shadow: 0 4px 10px rgba(0,0,0,0.5); outline: none; text-decoration: none; width: 100%; }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(10px); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: var(--bg-color); border: 2px solid var(--gold-primary); padding: 25px; border-radius: 20px; width: 92%; max-width: 500px; max-height: 85vh; overflow-y: auto; text-align: right; color: var(--gold-accent); }
+        .section-title { color: var(--gold-primary); border-bottom: 1px solid var(--gold-primary); padding-bottom: 5px; margin-top: 20px; font-size: 1.3em; font-weight: bold; }
+        .info-text { line-height: 1.8; margin: 12px 0; font-size: 1.15em; }
+        .close-btn { display: block; width: 100%; padding: 12px; margin-top: 30px; background: var(--gold-primary); color: #010d0c; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; }
+        b { color: var(--gold-primary); }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { border: 1px solid var(--gold-primary); padding: 8px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="header-section">
+        <h1 class="app-title">زاد المسلم</h1>
+        <div class="sub-title">Zadê Misilman • Zad Al-Muslim</div>
+    </div>
+    <div class="main-container">
+        <div class="top-info-box">لغات، زمان ...</div>
+        <div class="azan-circle">بانگ</div>
+    </div>
+    <div class="main-container">
+        <button class="gold-button" onclick="openModal('prophetModal')"><span>➤</span><span>النبي ﷺ</span></button>
+        <button class="gold-button" onclick="openModal('hadithModal')"><span>➤</span><span>حديث</span></button>
+        <button class="gold-button" onclick="openModal('sunnahModal')"><span>➤</span><span>سونه</span></button>
+        <button class="gold-button" onclick="openModal('arkanModal')"><span>➤</span><span>ئەركان</span></button>
+        <button class="gold-button" onclick="openModal('prayModal')"><span>➤</span><span>نڤێژ، صلاة</span></button>
+        <button class="gold-button" onclick="window.open('https://qiblafinder.withgoogle.com/', '_blank')"><span>➤</span><span>قبلة</span></button>
+    </div>
+    <div id="prayModal" class="modal">
+        <div class="modal-content">
+            <h2 style="text-align: center;">نڤێژ و دەستنوێژ • الصلاة والوضوء</h2>
+            <div class="section-title">أولاً: الوضوء (مفتاح الصلاة)</div>
+            <p class="info-text"><b>فرائض الوضوء (الأركان الستة):</b><br>
+            1. النية. 2. غسل الوجه (المضمضة والاستنشاق). 3. غسل اليدين للمرفقين. 4. مسح الرأس والأذنين. 5. غسل الرجلين للكعبين. 6. الترتيب والموالاة.</p>
+            <b>سنن وفضائل الوضوء:</b>
+            <p class="info-text">• التسمية • غسل الكفين ثلاثاً • السواك • الدعاء بعد الفراغ: "أشهد أن لا إله إلا الله وحده لا شريك له، وأشهد أن محمداً عبده ورسوله، اللهم اجعلني من التوابين واجعلني من المتطهرين".</p>
+            <b>مبطلات الوضوء:</b>
+            <p class="info-text">1. الخارج من السبيلين. 2. النوم العميق المستغرق. 3. زوال العقل. 4. أكل لحم الإبل. 5. لمس الفرج باليد مباشرة من غير حائل.</p>
+            <div class="section-title">ثانياً: الصلوات الخمس</div>
+            <table>
+                <tr><th>الصلاة</th><th>الفرض</th><th>وقتها</th></tr>
+                <tr><td>الفجر</td><td>2</td><td>الفجر للشروق</td></tr>
+                <tr><td>الظهر</td><td>4</td><td>زوال الشمس</td></tr>
+                <tr><td>العصر</td><td>4</td><td>ظل الشيء مثله</td></tr>
+                <tr><td>المغرب</td><td>3</td><td>غروب الشمس</td></tr>
+                <tr><td>العشاء</td><td>4</td><td>غياب الشفق</td></tr>
+            </table>
+            <div class="section-title">ثالثاً: أذكار الصلاة بالتفصيل</div>
+            <p class="info-text">
+                <b>دعاء الاستفتاح:</b> "سبحانك اللهم وبحمدك، وتبارك اسمك، وتعالى جدك، ولا إله غيرك".<br>
+                <b>التشهد الأول:</b> "التحيات لله والصلوات والطيبات، السلام عليك أيها النبي ورحمة الله وبركاته..."<br>
+                <b>الصلاة الإبراهيمية:</b> "اللهم صلِ على محمد وعلى آل محمد، كما صليت على إبراهيم وعلى آل إبراهيم..."
+            </p>
+            <div class="section-title">رابعاً: الركن والواجب وسجود السهو</div>
+            <p class="info-text"><b>الركن:</b> ما لا تصح الصلاة بدونه كالفاتحة. <br><b>الواجب:</b> ما يُجبر بسجود السهو كالتشهد الأول. <br><b>سجود السهو:</b> سجدتان في آخر الصلاة.</p>
+            <button onclick="closeModal('prayModal')" class="close-btn">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="prophetModal" class="modal">
+        <div class="modal-content">
+            <h2 style="text-align: center;">سيرة النبي محمد ﷺ</h2>
+            <div class="section-title">الأحفاد وأزواج البنات</div>
+            <p class="info-text"><b>أزواج بناته:</b> أبو العاص بن الربيع، عثمان بن عفان، علي بن أبي طالب.<br>
+            <b>الأحفاد:</b> الحسن، الحسين، محسن، زينب، أم كلثوم، علي، أمامة، عبد الله بن عثمان.</p>
+            <button onclick="closeModal('prophetModal')" class="close-btn">إغلاق</button>
+        </div>
+    </div>
+
+    <div id="hadithModal" class="modal"><div class="modal-content"><h2>أحاديث شريفة</h2><p class="info-text">«إنما الأعمال بالنيات».. «تبسمك في وجه أخيك صدقة».. «خيركم من تعلم القرآن وعلمه».</p><button onclick="closeModal('hadithModal')" class="close-btn">إغلاق</button></div></div>
+    <div id="sunnahModal" class="modal"><div class="modal-content"><h2>السنة النبوية</h2><p class="info-text">كل ما أُثر عن النبي ﷺ من قول أو فعل أو تقرير.</p><button onclick="closeModal('sunnahModal')" class="close-btn">إغلاق</button></div></div>
+    <div id="arkanModal" class="modal"><div class="modal-content"><h2>أركان الدين</h2><p class="info-text">الإسلام (5)، الإيمان (6)، والإحسان.</p><button onclick="closeModal('arkanModal')" class="close-btn">إغلاق</button></div></div>
+
+    <script>
+        function openModal(id) { document.getElementById(id).style.display = 'flex'; }
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+        window.onclick = function(e) { if(e.target.className == 'modal') e.target.style.display = 'none'; }
+    </script>
+</body>
+</html>
